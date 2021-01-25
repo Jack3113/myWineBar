@@ -1,0 +1,30 @@
+{
+  "name": "my-wine-bar-api",
+  "version": "0.0.1",
+  "description": "a personal wine bar manager",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.js",
+    "build": "parcel build index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jack3113/myWineBar.git"
+  },
+  "author": "HackJack",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Jack3113/myWineBar/issues"
+  },
+  "homepage": "https://github.com/Jack3113/myWineBar#readme",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.13"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "parcel-bundler": "^1.12.4",
+    "prettier": "2.1.2"
+  }
+}
