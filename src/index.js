@@ -1,15 +1,16 @@
 import mongoose from 'mongoose';
 
 import app from './server';
-import config from './configuration.json';
+import config from './server/configuration.js';
 
 mongoose.connect(config.mongoUri, {
     keepAlive: true,
     keepAliveInitialDelay: 300000,
     socketTimeoutMS: 30000,
-    autoReconnect: true,
-    reconnectInterval: 1000,
     useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
 });
 
 app.listen(config.port, () => {
