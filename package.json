@@ -1,46 +1,48 @@
 {
-  "name": "my-wine-bar-api",
-  "version": "0.0.1",
-  "description": "a personal wine bar manager",
-  "main": "index.js",
-  "scripts": {
-    "dev": "NODE_ENV=local nodemon --watch ./src --exec babel-node ./src/index.js",
-    "build": "npx babel src --out-dir dist --ignore \"src/server/configuration.default.js\"",
-    "start": "pm2 start dist/index.js --name my-wine-bar-api --log pm2.log --time"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Jack3113/myWineBar.git"
-  },
-  "author": "HackJack",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/Jack3113/myWineBar/issues"
-  },
-  "homepage": "https://github.com/Jack3113/myWineBar#readme",
-  "dependencies": {
-    "@sentry/node": "^6.0.1",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "compression": "^1.7.4",
-    "express": "^4.17.1",
-    "express-session": "^1.17.1",
-    "helmet": "^4.4.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.10.13",
-    "mongoose-lean-defaults": "^1.0.1",
-    "mongoose-lean-virtuals": "^0.7.6",
-    "nodemon": "^2.0.7"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/plugin-transform-async-to-generator": "^7.12.1",
-    "@babel/plugin-transform-classes": "^7.12.1",
-    "@babel/plugin-transform-runtime": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "eslint": "^7.13.0",
-    "prettier": "2.1.2"
-  }
+    "name": "my-wine-bar-api",
+    "version": "0.0.1",
+    "description": "a personal wine bar manager",
+    "main": "index.js",
+    "scripts": {
+        "dev": "NODE_ENV=local nodemon --watch ./src --exec babel-node ./src/index.js",
+        "build": "npx babel src --out-dir dist --ignore \"src/server/configuration.default.js\"",
+        "postinstall": "npm run build",
+        "start:pm2": "pm2 start dist/index.js --name my-wine-bar-api --log pm2.log --time",
+        "start": "node dist/index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Jack3113/myWineBar.git"
+    },
+    "author": "HackJack",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/Jack3113/myWineBar/issues"
+    },
+    "homepage": "https://github.com/Jack3113/myWineBar#readme",
+    "dependencies": {
+        "@sentry/node": "^6.0.1",
+        "bcryptjs": "^2.4.3",
+        "body-parser": "^1.19.0",
+        "compression": "^1.7.4",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
+        "helmet": "^4.4.1",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.10.13",
+        "mongoose-lean-defaults": "^1.0.1",
+        "mongoose-lean-virtuals": "^0.7.6",
+        "nodemon": "^2.0.7"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.10",
+        "@babel/core": "^7.12.10",
+        "@babel/node": "^7.12.10",
+        "@babel/plugin-transform-async-to-generator": "^7.12.1",
+        "@babel/plugin-transform-classes": "^7.12.1",
+        "@babel/plugin-transform-runtime": "^7.12.10",
+        "@babel/preset-env": "^7.12.11",
+        "eslint": "^7.13.0",
+        "prettier": "2.1.2"
+    }
 }
