@@ -29,8 +29,8 @@ export default class CellarController {
         try {
             const { userId } = req.session;
 
-            const cellar = await Cellar.find({ owner: userId, isDefault: true })
-                .populate('bottles')
+            const cellar = await Cellar.findOne({ creator: userId, isDefault: true })
+                .populate({ path: 'bottles' })
                 .lean({ virtuals: true });
 
             if (!cellar) {

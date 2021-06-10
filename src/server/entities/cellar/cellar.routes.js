@@ -4,7 +4,6 @@ import CellarController from './cellar.controller';
 
 const router = Router();
 
-router.post('/', CellarController.create);
-router.get('/mine', CellarController.getDefault);
+router.route('/').post(CellarController.create).get(CellarController.getDefault);
 
 export default router;
