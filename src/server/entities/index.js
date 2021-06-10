@@ -4,6 +4,8 @@ import { authenticatedRoute } from '../tools/security.tools';
 
 import userRoutes from './user/user.routes';
 import authRoutes from './auth/auth.routes';
+import cellarRoutes from './cellar/cellar.routes';
+import bottleRoutes from './bottle/bottle.routes';
 
 const router = Router();
 
@@ -16,5 +18,7 @@ router.get('/health', (req, res) =>
 
 router.use('/v1/auth', authRoutes);
 router.use('/v1/user', authenticatedRoute, userRoutes);
+router.use('/v1/cellar', authenticatedRoute, cellarRoutes);
+router.use('/v1/bottle', authenticatedRoute, bottleRoutes);
 
 export default router;

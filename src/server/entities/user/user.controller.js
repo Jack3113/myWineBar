@@ -2,14 +2,19 @@ import User from './user.model';
 
 export default class UserController {
     static async me(req, res) {
-        const { userId } = req.session;
+        try {
+            const { userId } = req.session;
 
-        const user = await User.findById(userId).lean();
+            const user = await User.findById(userId).lean();
 
-        if (!user) {
-            return res.status(404).json({ error: { message: 'User not found' } });
+            if (!user) {
+                return res.status(404).json({ error: { message: 'User not found' } });
+            }
+
+            return res.json(user);
+        } catch (e) {
+            console.error(e);
+            return res.status(500).json({ error: e });
         }
-
-        return res.json(user);
     }
 }
