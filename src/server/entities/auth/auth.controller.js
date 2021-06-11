@@ -23,7 +23,7 @@ export default class AuthController {
 
     static async register(req, res) {
         try {
-            const { name, email, password } = req.body;
+            const { name, email, password, gender } = req.body;
             if (!password) {
                 return res.status(400).json({ error: { message: 'Missing password' } });
             }
@@ -31,7 +31,7 @@ export default class AuthController {
                 return res.status(400).json({ error: { message: 'Missing email' } });
             }
 
-            const user = new User({ name, email, password });
+            const user = new User({ name, email, password, gender });
             await user.save();
 
             const createdUser = await User.findById(user._id).lean();

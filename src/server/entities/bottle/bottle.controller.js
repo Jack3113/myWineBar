@@ -10,7 +10,7 @@ export default class BottleController {
             if (cellar) {
                 const authorized = await Cellar.exists({
                     _id: req.body.cellar,
-                    $or: [{ creator: userId }, { owners: { $in: [userId] } }],
+                    $or: [{ creator: userId }, { owners: userId }],
                 });
                 if (!authorized) {
                     return res.sendStatus(403);

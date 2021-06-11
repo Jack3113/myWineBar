@@ -30,7 +30,7 @@ const Bottle = new Schema(
             required: true,
             index: true,
         },
-        wineColor: { type: String, enum: ['red', 'white', 'rosé', 'gray', 'yellow', 'tawny', 'orange'], index: true },
+        wineColor: { type: String, enum: ['red', 'white', 'rose', 'gray', 'yellow', 'tawny', 'orange'], index: true },
         year: Number,
     },
     {

@@ -43,4 +43,23 @@ export default class CellarController {
             return res.status(500).json({ error: e });
         }
     }
+
+    static async getShared(req, res) {
+        try {
+            const { userId } = req.session;
+
+            const cellar = await Cellar.find({ owners: userId, isDefault: true })
+                .populate({ path: 'bottles' })
+                .lean({ virtuals: true });
+
+            if (!cellar) {
+                return res.json([]);
+            }
+
+            return res.json(cellar);
+        } catch (e) {
+            console.error(e);
+            return res.status(500).json({ error: e });
+        }
+    }
 }
