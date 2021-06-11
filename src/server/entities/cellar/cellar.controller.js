@@ -50,6 +50,7 @@ export default class CellarController {
 
             const cellar = await Cellar.find({ owners: userId, isDefault: true })
                 .populate({ path: 'bottles' })
+                .populate({ path: 'creator', select: 'name' })
                 .lean({ virtuals: true });
 
             if (!cellar) {
