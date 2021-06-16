@@ -6,7 +6,7 @@ const Bottle = new Schema(
     {
         name: { type: String, required: true },
         abv: Number,
-        awards: [String],
+        awards: String,
         castle: String,
         category: String,
         cellar: { ref: 'Cellar', type: Schema.Types.ObjectId, index: true },
