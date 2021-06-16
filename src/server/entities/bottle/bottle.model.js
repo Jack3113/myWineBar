@@ -12,12 +12,11 @@ const Bottle = new Schema(
         cellar: { ref: 'Cellar', type: Schema.Types.ObjectId, index: true },
         composition: String,
         conservation: String,
-        containsSulphites: Boolean,
+        containsSulfites: Boolean,
         country: String, // ISO 3166 Alpha-2
         createdBy: { ref: 'User', type: Schema.Types.ObjectId, index: true },
         description: String,
         ean13: String,
-        grapeVariety: String,
         isOrganic: Boolean,
         notes: String,
         photo: String,
