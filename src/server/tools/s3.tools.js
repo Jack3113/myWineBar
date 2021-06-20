@@ -16,8 +16,8 @@ export default class S3 {
             Bucket: bucket,
             Fields: {
                 key,
+                acl: 'public-read',
             },
-            ACL: 'public-read',
         };
         return new Promise((resolve, reject) =>
             this.s3.createPresignedPost(params, (err, data) => {
