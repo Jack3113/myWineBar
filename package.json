@@ -32,7 +32,8 @@
         "mongoose": "^5.10.13",
         "mongoose-lean-defaults": "^1.0.1",
         "mongoose-lean-virtuals": "^0.7.6",
-        "nodemon": "^2.0.7"
+        "nodemon": "^2.0.7",
+        "aws-sdk": "^2.930.0"
     },
     "devDependencies": {
         "@babel/cli": "^7.12.10",
